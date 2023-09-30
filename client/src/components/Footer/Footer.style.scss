@@ -1,5 +1,9 @@
 .footer {
+  font-family: Arial, sans-serif;
   width: 100%;
   background-color: black;
   color: white;
+  text-align: center; /* Center-align the text */
+  height: 100px; /* Additional height */
+  padding: 20px; /* Add padding to the content inside the footer */
 }

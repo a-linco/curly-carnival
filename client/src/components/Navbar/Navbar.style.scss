@@ -1,5 +1,102 @@
 .navbar {
   display: flex;
-  width: 100%;
   justify-content: space-between;
+  align-items: center; /* Align items vertically in the center */
+  padding: 1rem 2rem; /* Add padding to the navbar */
+  background-color: #ffffff; /* Set background color */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+  position: fixed; /* Fixed positioning to stick the navbar at the top */
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure the navbar appears above other content */
+}
+
+
+.wrappingDiv { 
+  margin-top: 10vh; 
+}
+
+.navbar__logo {
+  margin-right: 2rem; /* Add margin to separate logo from buttons */
+}
+
+.navbar__logo a {
+  text-decoration: none; /* Remove underline from the logo link */
+  color: #333; /* Set logo text color */
+  font-weight: bold; /* Make the logo text bold */
+  font-size: 1.2rem; /* Set font size */
+}
+
+.navbar__account {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Add margin between buttons */
+}
+
+.navbar__account__buttons {
+  display: flex;
+  align-items: center;
+  margin-left: -16rem; /* Add margin between buttons */
+}
+
+
+
+.navbar__account button {
+  background-color: #4caf50; /* Green background color for buttons */
+  color: white; /* Text color */
+  border: none;
+  padding: 0.8rem 1.5rem; /* Add padding to the buttons */
+  border-radius: 5px; /* Add rounded corners to buttons */
+  cursor: pointer;
+  margin-left: 1rem; /* Add margin between buttons */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+
+  &:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+
+
+.mode-toggle-button {
+  background-color: rgba(0, 0, 0, 0.594); /* black background color for the dark mode toggle button */
+  color: white; /* Text color for the dark mode toggle button */
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  
+  &:hover {
+    background-color: #000000;
+    }
+  }
+  
+
+  /* Default light mode styles */
+:root {
+  --background-color: #ffffff;
+  --text-color: #333333;
+}
+
+/* Dark mode styles for users who prefer dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #333333;
+    --text-color: #ffffff;
+  }
+}
+
+/* Apply the styles using CSS variables */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+
+/* Additional styles using the same variables */
+.navbar {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  /* ... other styles ... */
+}
+
 }
