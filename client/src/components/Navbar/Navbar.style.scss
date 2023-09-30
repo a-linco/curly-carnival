@@ -1,14 +1,41 @@
+// Define CSS variables for both light and dark modes
+:root {
+  // Light mode
+  --background-color-light: #ffffff;
+  --text-color-light: #333333;
+
+  // Dark mode
+  --background-color-dark: #333333;
+  --text-color-dark: #ffffff;
+}
+
+body {
+  background-color: var(--background-color-light);
+  color: var(--text-color-light);
+}
+
+body.dark-mode {
+  background-color: var(--background-color-dark);
+  color: var(--text-color-dark);
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center; /* Align items vertically in the center */
   padding: 1rem 2rem; /* Add padding to the navbar */
-  background-color: #ffffff; /* Set background color */
+  background-color: var(--background-color-light);
+  color: var(--text-color-light);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
   position: fixed; /* Fixed positioning to stick the navbar at the top */
   top: 0;
   width: 100%;
   z-index: 1000; /* Ensure the navbar appears above other content */
+
+  body.dark-mode & {
+    background-color: var(--background-color-dark);
+    color: var(--text-color-dark);
+}
 }
 
 
@@ -17,15 +44,17 @@
 }
 
 .navbar__logo {
-  margin-right: 2rem; /* Add margin to separate logo from buttons */
-  font-family: Arial, sans-serif
-}
+  margin-right: 2rem;
+  font-family: Arial, sans-serif;
 
-.navbar__logo a {
-  text-decoration: none; /* Remove underline from the logo link */
-  color: #333; /* Set logo text color */
-  font-weight: bold; /* Make the logo text bold */
-  font-size: 1.2rem; /* Set font size */
+  a {
+    text-decoration: none;
+    color: var(--text-color-light);
+
+    body.dark-mode & {
+      color: var(--text-color-dark);
+    }
+  }
 }
 
 .navbar__account {
@@ -68,36 +97,6 @@
   
   &:hover {
     background-color: #000000;
-    }
-  }
-  
-
-  /* Default light mode styles */
-:root {
-  --background-color: #ffffff;
-  --text-color: #333333;
-}
-
-/* Dark mode styles for users who prefer dark mode */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background-color: #333333;
-    --text-color: #ffffff;
   }
 }
-
-/* Apply the styles using CSS variables */
-body {
-  background-color: var(--background-color);
-  color: var(--text-color);
-}
-
-
-/* Additional styles using the same variables */
-.navbar {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  /* ... other styles ... */
-}
-
 }
